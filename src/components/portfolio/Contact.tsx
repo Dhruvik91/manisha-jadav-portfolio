@@ -16,7 +16,13 @@ export function Contact() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    console.log("Form submitted:", formData);
+    
+    const phoneNumber = "917096481877";
+    const message = `Hello! I'm ${formData.name}.\n\nEmail: ${formData.email}\n\nMessage: ${formData.message}`;
+    const encodedMessage = encodeURIComponent(message);
+    const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
+    
+    window.open(whatsappUrl, "_blank");
   };
 
   const contactInfo = [
@@ -42,9 +48,9 @@ export function Contact() {
 
   return (
     <section id="contact" className="py-20 bg-secondary/20">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-4xl sm:text-5xl font-bold text-foreground mb-4">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-foreground mb-4">
             Get In Touch
           </h2>
           <div className="w-20 h-1 bg-primary mx-auto rounded-full" />
@@ -56,8 +62,8 @@ export function Contact() {
 
         <div className="grid md:grid-cols-2 gap-12 max-w-6xl mx-auto">
           <div className="space-y-8">
-            <div className="glass-card p-8 rounded-2xl">
-              <h3 className="text-2xl font-semibold text-foreground mb-6">
+            <div className="glass-card p-4 sm:p-8 rounded-2xl">
+              <h3 className="text-xl sm:text-2xl font-semibold text-foreground mb-6">
                 Let's Connect
               </h3>
               <p className="text-muted-foreground mb-8 leading-relaxed">
@@ -71,23 +77,23 @@ export function Contact() {
                     key={index}
                     className="glass-card border-border/50 hover-lift"
                   >
-                    <CardContent className="p-4 flex items-center gap-4">
-                      <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center flex-shrink-0">
-                        <info.icon className="w-5 h-5 text-primary" />
+                    <CardContent className="p-3 sm:p-4 flex items-center gap-3 sm:gap-4">
+                      <div className="w-10 h-10 sm:w-12 sm:h-12 bg-primary/10 rounded-full flex items-center justify-center flex-shrink-0">
+                        <info.icon className="w-4 h-4 sm:w-5 sm:h-5 text-primary" />
                       </div>
-                      <div className="flex-grow">
+                      <div className="flex-grow min-w-0">
                         <p className="text-sm text-muted-foreground">
                           {info.title}
                         </p>
                         {info.link ? (
                           <a
                             href={info.link}
-                            className="text-foreground font-medium hover:text-primary transition-colors"
+                            className="text-foreground font-medium hover:text-primary transition-colors break-words text-sm sm:text-base"
                           >
                             {info.value}
                           </a>
                         ) : (
-                          <p className="text-foreground font-medium">
+                          <p className="text-foreground font-medium break-words text-sm sm:text-base">
                             {info.value}
                           </p>
                         )}
@@ -99,8 +105,8 @@ export function Contact() {
             </div>
           </div>
 
-          <div className="glass-card p-8 rounded-2xl">
-            <h3 className="text-2xl font-semibold text-foreground mb-6">
+          <div className="glass-card p-4 sm:p-8 rounded-2xl">
+            <h3 className="text-xl sm:text-2xl font-semibold text-foreground mb-6">
               Send a Message
             </h3>
             <form onSubmit={handleSubmit} className="space-y-6">
