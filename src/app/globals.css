@@ -1,0 +1,291 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap");
+@import "leaflet/dist/leaflet.css";
+
+:root {
+  --foreground-rgb: 255, 255, 255;
+  --background-start-rgb: 8, 8, 12;
+  --background-end-rgb: 12, 12, 16;
+}
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 340 10% 10%;
+    --card: 0 0% 100%;
+    --card-foreground: 340 10% 10%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 340 10% 10%;
+    --primary: 330 81% 60%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 330 30% 95%;
+    --secondary-foreground: 340 10% 10%;
+    --muted: 330 20% 96%;
+    --muted-foreground: 340 5% 45%;
+    --accent: 330 30% 95%;
+    --accent-foreground: 340 10% 10%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 330 20% 90%;
+    --input: 330 20% 90%;
+    --ring: 330 81% 60%;
+    --radius: 0.5rem;
+
+    /* Custom pink colors - Light mode */
+    --primary-pink: 330 81% 60%;
+    --primary-pink-light: 330 81% 70%;
+    --primary-pink-dark: 330 81% 50%;
+    --pink-50: 330 100% 98%;
+    --pink-100: 330 100% 95%;
+    --pink-200: 330 96% 90%;
+    --pink-300: 330 94% 82%;
+    --pink-400: 330 86% 70%;
+    --pink-500: 330 81% 60%;
+    --pink-600: 330 77% 50%;
+    --pink-700: 330 70% 42%;
+    --pink-800: 330 65% 35%;
+    --pink-900: 330 60% 28%;
+  }
+
+  .dark {
+    --background: 340 15% 8%;
+    --foreground: 330 20% 98%;
+    --card: 340 15% 10%;
+    --card-foreground: 330 20% 98%;
+    --popover: 340 15% 10%;
+    --popover-foreground: 330 20% 98%;
+    --primary: 330 81% 60%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 340 15% 15%;
+    --secondary-foreground: 330 20% 98%;
+    --muted: 340 15% 15%;
+    --muted-foreground: 330 10% 65%;
+    --accent: 340 15% 15%;
+    --accent-foreground: 330 20% 98%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 340 15% 18%;
+    --input: 340 15% 18%;
+    --ring: 330 81% 60%;
+
+    /* Custom pink colors - Dark mode */
+    --primary-pink: 330 81% 60%;
+    --primary-pink-light: 330 81% 70%;
+    --primary-pink-dark: 330 81% 50%;
+    --pink-50: 340 15% 8%;
+    --pink-100: 340 15% 12%;
+    --pink-200: 340 15% 18%;
+    --pink-300: 340 15% 25%;
+    --pink-400: 330 50% 40%;
+    --pink-500: 330 81% 60%;
+    --pink-600: 330 81% 70%;
+    --pink-700: 330 86% 75%;
+    --pink-800: 330 90% 80%;
+    --pink-900: 330 95% 90%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground font-inter antialiased;
+    background: linear-gradient(
+      135deg,
+      hsl(0 0% 3.9%) 0%,
+      hsl(0 0% 6%) 50%,
+      hsl(0 0% 8%) 100%
+    );
+    min-height: 100vh;
+  }
+}
+
+@layer utilities {
+  .font-inter {
+    font-family: "Inter", sans-serif;
+  }
+
+  .text-gradient-primary {
+    @apply bg-gradient-to-r from-pink-400 to-pink-600 bg-clip-text text-transparent;
+  }
+
+  .text-gradient-subtle {
+    @apply bg-gradient-to-r from-pink-200 to-pink-400 bg-clip-text text-transparent;
+  }
+
+  .glass-card {
+    @apply bg-card/50 backdrop-blur-xl border border-border/50;
+  }
+
+  .glass-nav {
+    @apply bg-card/80 backdrop-blur-2xl border-b border-border;
+  }
+
+  .hover-lift {
+    @apply transition-all duration-300 hover:translate-y-[-2px] hover:shadow-xl hover:shadow-primary/10;
+  }
+
+  .subtle-glow {
+    box-shadow: 0 0 20px hsl(var(--primary) / 0.1);
+  }
+
+  .primary-glow {
+    box-shadow: 0 0 30px hsl(var(--primary) / 0.2),
+      0 0 60px hsl(var(--primary) / 0.1);
+  }
+
+  .smooth-scroll {
+    scroll-behavior: smooth;
+  }
+
+  .fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  .fade-in-visible {
+    opacity: 1;
+    transform: translateY(0);
+    transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .slide-in-left {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+
+  .slide-in-left-visible {
+    opacity: 1;
+    transform: translateX(0);
+    transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .slide-in-right {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+
+  .slide-in-right-visible {
+    opacity: 1;
+    transform: translateX(0);
+    transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .scale-in {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+
+  .scale-in-visible {
+    opacity: 1;
+    transform: scale(1);
+    transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  /* Organic curved shapes */
+  .organic-card {
+    border-radius: 2rem 2rem 2rem 0.5rem;
+    position: relative;
+  }
+
+  .organic-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 2rem 2rem 2rem 0.5rem;
+    background: linear-gradient(
+      135deg,
+      rgba(37, 173, 208, 0.1) 0%,
+      rgba(37, 173, 208, 0.05) 100%
+    );
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+  }
+
+  .organic-card:hover::before {
+    opacity: 1;
+  }
+
+  .organic-hero {
+    border-radius: 3rem 3rem 3rem 1rem;
+  }
+
+  .organic-feature {
+    border-radius: 1.5rem 1.5rem 1.5rem 0.3rem;
+  }
+
+  .organic-button {
+    border-radius: 2rem 2rem 2rem 0.5rem;
+  }
+
+  .organic-badge {
+    border-radius: 1rem 1rem 1rem 0.2rem;
+  }
+
+  .organic-nav {
+    border-radius: 0 0 2rem 2rem;
+  }
+
+  .flowing-shape {
+    clip-path: polygon(0% 0%, 100% 0%, 95% 85%, 85% 100%, 0% 100%);
+  }
+
+  .curved-bottom {
+    clip-path: polygon(0% 0%, 100% 0%, 100% 85%, 85% 100%, 15% 100%, 0% 85%);
+  }
+
+  .wave-shape {
+    clip-path: polygon(
+      0% 0%,
+      100% 0%,
+      100% 80%,
+      90% 90%,
+      80% 95%,
+      70% 98%,
+      60% 100%,
+      50% 98%,
+      40% 95%,
+      30% 90%,
+      20% 80%,
+      10% 70%,
+      0% 60%
+    );
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: hsl(var(--background));
+}
+
+::-webkit-scrollbar-thumb {
+  background: hsl(var(--primary));
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: hsl(var(--primary-pink-light));
+}
+
+/* Smooth scrolling for the entire page */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Selection styling */
+::selection {
+  background: hsl(var(--primary) / 0.3);
+  color: hsl(var(--foreground));
+}
