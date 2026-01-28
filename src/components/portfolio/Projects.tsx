@@ -38,13 +38,13 @@ export function Projects() {
       technologies: ["Lab Equipment", "Media Prep", "Sterile Technique"],
       image: "⚗️",
     },
-    // {
-    //   title: "Research & Development",
-    //   description:
-    //     "Contributing to R&D initiatives with analytical skills and scientific knowledge in microbiological applications.",
-    //   technologies: ["R&D", "Analysis", "Innovation"],
-    //   image: "📊",
-    // },
+    {
+      title: "Research & Development",
+      description:
+        "Contributing to R&D initiatives with analytical skills and scientific knowledge in microbiological applications.",
+      technologies: ["R&D", "Analysis", "Innovation"],
+      image: "📊",
+    },
     {
       title: "Postbiotics Seminar Participation",
       description:

@@ -22,7 +22,7 @@ export function Skills() {
         "Microbiological Techniques",
         "Quality Control (QC)",
         "Quality Assurance (QA)",
-        "Research & Development",
+        // "Research & Development",
         "MS Office",
         "Computer Fundamentals",
       ],
