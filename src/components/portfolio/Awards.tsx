@@ -26,13 +26,19 @@ export function Awards() {
     {
       title: "First National Seminar on Postbiotics",
       description:
-        "Participated in the First National Seminar on Postbiotics - New Emerging Axis in Functional Foods: Health Benefits, Applications, Challenges & Future Prospects, organized by LSI India in virtual mode.",
+        "Participated in the First National Seminar on Postbiotics - New Emerging Area in Functional Foods: Health Benefits, Applications in Food Industry & Future Prospects, organized by ILSI India in virtual mode.",
       date: "",
     },
     {
       title: "Employability Skill Training Programme",
       description:
-        "Successfully completed the Employability Skill Training Programme conducted by Mahindra Pride Classroom in association with Naandi Foundation, focusing on professional communication and workplace readiness.",
+        "Successfully completed the Employability Skill Training Programme conducted by Mahindra Pride Classroom in collaboration with Naandi Foundation, focusing on professional, communication, and workplace skills.",
+      date: "",
+    },
+    {
+      title: "Hands-on Training on Diatom and Microalgae Sampling",
+      description:
+        "Participated in a one-day hands-on training program on Diatom and Microalgae Sampling, organized by P. D. Patel Institute of Applied Sciences, CHARUSAT, in association with ANRF-DST, Government of India.",
       date: "",
     },
     {
@@ -45,6 +51,12 @@ export function Awards() {
       title: "Certificate Course in Computer Concept (CCC)",
       description:
         "Successfully completed the Certificate Course in Computer Concept (CCC) with A+ grade, covering computer fundamentals, MS Office applications, and basic IT skills.",
+      date: "",
+    },
+    {
+      title: "Two-Day International Conference on AI-Powered Education",
+      description:
+        "Successfully attended a two-day international conference on AI-Powered Education: Opportunities, Challenges and Ethics, organized under RUSA 2.0 at C. B. Patel Arts College, Nadiad.",
       date: "",
     },
   ];

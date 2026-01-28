@@ -1,6 +1,6 @@
 "use client";
 
-import { Linkedin, Mail, Heart } from "lucide-react";
+import { Heart } from "lucide-react";
 
 export function Footer() {
   const currentYear = new Date().getFullYear();
@@ -10,7 +10,7 @@ export function Footer() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col items-center space-y-6">
           <div className="flex items-center gap-6">
-            <a
+            {/* <a
               href="https://linkedin.com"
               target="_blank"
               rel="noopener noreferrer"
@@ -18,14 +18,14 @@ export function Footer() {
               aria-label="LinkedIn"
             >
               <Linkedin className="w-6 h-6" />
-            </a>
-            <a
+            </a> */}
+            {/* <a
               href="mailto:jadavmanisha722@gmail.com"
               className="text-muted-foreground hover:text-primary transition-colors"
               aria-label="Email"
             >
               <Mail className="w-6 h-6" />
-            </a>
+            </a> */}
           </div>
 
           <div className="text-center">

@@ -44,16 +44,34 @@ export function About() {
                 Who I Am
               </h3>
               <p className="text-muted-foreground leading-relaxed mb-4">
-                Dedicated M.Sc. Microbiology graduate from A. N. Patel Institute of Science and Research under 
-                Sardar Patel University. I possess strong communication and decision-making skills with the 
+                Dedicated M.Sc. Microbiology graduate from A. N. Patel Institute of Science and Research under
+                Sardar Patel University. Possesses strong communication and decision-making skills with the
                 ability to work effectively in team-oriented and quality-driven environments.
               </p>
               <p className="text-muted-foreground leading-relaxed">
-                Secured First Prize in the Intercollegiate Youth Festival 2025 for mimicry, demonstrating 
-                creativity and stage presence. Seeking a full-time position in Quality Control (QC), Quality 
-                Assurance (QA), or Research & Development (R&D) to contribute scientific knowledge, analytical 
-                skills, and a commitment to quality excellence.
+                Secured First Prize in the Intercollegiate Youth Festival 2025 for mimicry, demonstrating
+                confidence, creativity, and stage presence. Seeking a full-time position in Quality Control (QC)
+                and Quality Assurance (QA) to contribute scientific knowledge, analytical skills, and a
+                commitment to quality excellence.
               </p>
+            </div>
+
+            <div className="glass-card p-8 rounded-2xl hover-lift">
+              <h3 className="text-2xl font-semibold text-primary mb-4">
+                Hobbies & Interests
+              </h3>
+              <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                {[
+                  "Listening Podcasts & Songs",
+                  "Street Play & Drama",
+                  "Badminton"
+                ].map((hobby, index) => (
+                  <li key={index} className="flex items-center gap-2 text-muted-foreground">
+                    <span className="w-2 h-2 bg-primary rounded-full" />
+                    {hobby}
+                  </li>
+                ))}
+              </ul>
             </div>
           </div>
 

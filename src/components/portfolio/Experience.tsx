@@ -11,7 +11,7 @@ export function Experience() {
       period: "06/2024 - Present",
       location: "Anand, Gujarat",
       description:
-        "Currently pursuing M.Sc. in Microbiology at Shri A. N. Patel Post-Graduate Institute of Science and Research, with comprehensive hands-on training and practical laboratory exposure in microbiological techniques.",
+        "Currently pursuing M.Sc. in Microbiology at Shri A. N. Patel Post Graduate Institute of Science and Research, Sardar Patel University, Anand.",
       achievements: [],
     },
     {
@@ -20,7 +20,7 @@ export function Experience() {
       period: "06/2021 - 03/2024",
       location: "Amreli, Gujarat",
       description:
-        "Completed B.Sc. in Microbiology at Kabiriya Arts, Vaghsiya Commerce and Bhagat Science Mahila College, affiliated with Saurashtra University.",
+        "Completed B.Sc. in Microbiology at Kabariya Arts, Vaghasiya Commerce and Bhagat Science Mahila College, affiliated with Saurashtra University.",
       achievements: [],
     },
     {
@@ -29,7 +29,7 @@ export function Experience() {
       period: "05/2025",
       location: "",
       description:
-        "Successfully completed a summer internship at Dr. Patel Pharmaceuticals Pvt. Ltd. with hands-on industrial exposure and structured field training.",
+        "Successfully completed a summer internship at Dr. Patel Pharmaceuticals Pvt. Ltd., with hands-on industrial exposure and structured field training.",
       achievements: [],
     },
   ];

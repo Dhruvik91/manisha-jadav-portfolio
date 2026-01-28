@@ -1,9 +1,7 @@
 "use client";
 
-import { ArrowDown, Github, Linkedin, Mail } from "lucide-react";
+import { Download } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import Image from "next/image";
-import heroImage from "@/assets/image.jpg";
 
 export function Hero() {
   const scrollToSection = (href: string) => {
@@ -19,9 +17,9 @@ export function Hero() {
       className="min-h-screen flex items-center justify-center relative overflow-hidden pt-16"
     >
       <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-primary/10 pointer-events-none" />
-      
+
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 relative z-10">
-        <div className="grid lg:grid-cols-2 gap-12 items-center fade-in fade-in-visible">
+        <div className="flex justify-center gap-12 items-center fade-in fade-in-visible">
           {/* Left Content */}
           <div className="text-center lg:text-left space-y-8">
             <div className="space-y-4">
@@ -37,46 +35,55 @@ export function Hero() {
             </div>
 
             <p className="text-lg sm:text-xl text-muted-foreground max-w-2xl mx-auto lg:mx-0 leading-relaxed">
-              Dedicated M.Sc. Microbiology graduate from A. N. Patel Institute of Science and Research. 
+              Dedicated M.Sc. Microbiology graduate from A. N. Patel Institute of Science and Research.
               Strong communication and decision-making skills with team-oriented approach and quality-driven mindset.
             </p>
 
             <div className="flex flex-wrap items-center justify-center lg:justify-start gap-4 pt-4">
               <Button
-                size="lg"
+                size="sm"
                 onClick={() => scrollToSection("#contact")}
                 className="bg-primary hover:bg-primary/90 text-primary-foreground px-8 py-6 text-lg rounded-full primary-glow"
               >
                 Get In Touch
               </Button>
               <Button
-                size="lg"
+                size="sm"
                 variant="outline"
                 onClick={() => scrollToSection("#projects")}
                 className="border-primary text-primary hover:bg-primary/10 px-8 py-6 text-lg rounded-full"
               >
                 View Projects
               </Button>
+              <Button
+                size="sm"
+                variant="outline"
+                onClick={() => window.open("https://medbridge-portal.s3.ap-south-1.amazonaws.com/Manisha-Jadav-Resume.pdf", "_blank")}
+                className="border-primary text-primary hover:bg-primary/10 px-8 py-6 text-lg rounded-full"
+              >
+                Download Resume
+                <Download className="ml-2 h-5 w-5" />
+              </Button>
             </div>
           </div>
 
           {/* Right Image */}
-          <div className="relative w-full max-w-md mx-auto lg:max-w-none">
+          {/* <div className="relative w-full max-w-sm mx-auto lg:max-w-md">
             <div className="relative aspect-square rounded-2xl overflow-hidden shadow-2xl">
               <Image
                 src={heroImage}
                 alt="Manisha Jadav"
                 fill
-                className="object-cover"
+                className="object-contain"
                 priority
                 sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 40vw"
               />
             </div>
             <div className="absolute -inset-4 bg-gradient-to-r from-primary/20 to-primary/10 rounded-2xl -z-10 blur-2xl" />
-          </div>
+          </div> */}
         </div>
 
-          {/* <div className="flex items-center justify-center gap-6 pt-8">
+        {/* <div className="flex items-center justify-center gap-6 pt-8">
             <a
               href="https://linkedin.com"
               target="_blank"
@@ -95,7 +102,7 @@ export function Hero() {
             </a>
           </div> */}
 
-          {/* <button
+        {/* <button
             onClick={() => scrollToSection("#about")}
             className="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce"
           >
